@@ -1,6 +1,3 @@
-#ifndef DRAWINGS_H
-#define DRAWINGS_H
-
 #include <iostream>
 void homeScreen() {
     std::cout << " ----------------------------------------"  << '\n'
@@ -63,4 +60,16 @@ void startScreen() {
               << " ----------------------------------------"  << '\n';
 }
 
-#endif
+void tryAgainScreen() {
+    std::cout << " ----------------------------------------"  << '\n'
+              << "|      Welcome to Flight Reservation     |" << '\n'
+              << "|              System                    |" << '\n'
+              << " ----------------------------------------"  << '\n'
+              << "|                                        |" << '\n'
+              << "|        Choose an option below:         |" << '\n'
+              << "|                                        |" << '\n'
+              << "|   1. Continue                          |" << '\n'
+              << "|   2. Back                              |" << '\n'
+              << "|                                        |" << '\n'
+              << " ----------------------------------------"  << '\n';
+}
