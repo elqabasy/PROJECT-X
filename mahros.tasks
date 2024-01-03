@@ -1,6 +1,8 @@
 Features
-- File Manager - handle files: read, write, delete, create, rename, change path, etc.
+- Create text-formating for print, format and clean text : print in center of screen
 - Manage Application with our voices: take actions (for ex.)
-
 Fixes
 - Fix-signin-form
+
+Done
+- File Manager - handle files: read, write, delete, create, rename, change path, etc.
