@@ -10,9 +10,9 @@ add_executable(PROJECT-X
     src/drawings.cpp
     src/getpass.cpp
     src/loginSys.cpp
-    # ... add more source files as needed
     src/File.cpp
     src/Formatting.cpp
+    # ... add more source files as needed
 )
 
 # Include directories
