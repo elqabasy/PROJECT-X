@@ -1,9 +1,11 @@
-#include <iostream>
 #include <fstream>
-#include "lib/drawings.h"
+#include <iostream>
 #include "lib/getpass.h"
-#include "lib/File.h"
+#include "lib/drawings.h"
+#include "lib/Formatting.h"
 using namespace std;
+
+
 
 // Tasks
 // 1- Handle Keys
@@ -13,7 +15,7 @@ using namespace std;
 //Functions
 void signIn();
 void signUp();
-void selectOption(unsigned short int &input);
+void selectOption(unsigned short int &input);    
 
 int main(){
     homeScreen();
