@@ -2,9 +2,7 @@
 #include <iostream>
 #include "lib/getpass.h"
 #include "lib/drawings.h"
-#include "lib/Formatting.h"
 using namespace std;
-
 
 
 // Tasks
@@ -24,7 +22,6 @@ int main(){
     selectOption(input);
     return 0;
 }
-
 
 void selectOption(unsigned short int &input){
     switch(input){
