@@ -4,8 +4,10 @@
 #include "lib/getpass.h"
 using namespace std;
 
-
-
+//Tasks
+//1- Handle Keys
+//2- Handle Functions
+//3- Branching
 
 //Functions
 void signIn();
