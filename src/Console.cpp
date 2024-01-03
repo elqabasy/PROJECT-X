@@ -27,6 +27,6 @@ void Console::resetCursor(){
 }
 
 void Console::sleep(const int& ms) {
-    this_thread::sleep_for(chrono::milliseconds{ms}); // got it from internet search
+    this_thread::sleep_for(chrono::microseconds{ms}); // got it from internet search
     // chrono::seconds{seconds} return a const value of seconds with type chrono::seconds
 }   

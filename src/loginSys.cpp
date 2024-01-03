@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "../lib/getpass.h"
+#include "../lib/Animation.h"
 using namespace std;
 
 const string DATA_PATH = R"(..\data\accounts\)";
@@ -10,13 +11,16 @@ void signUp(){
     unsigned short int choice;
     
     //Input
-    cout << "Create your username: ";
+    // cout << "Create your username: ";
+    Animation::Text::writing("Create your username: ");
     cin >> username;
     
-    cout << "Create your password: ";
+    // cout << "Create your password: ";
+    Animation::Text::writing("Create your password: ");
     password = getPass();
     
-    cout << "Confirm your password: ";
+    // cout << "Confirm your password: ";
+    Animation::Text::writing("Confirm your password: ");
     confirmation_password = getPass();
 
     //Functions
@@ -26,12 +30,14 @@ void signUp(){
         account << username << '\n' << password;
         account.close();
 
-        cout << "| Account created successfully!, You can now log in to your account.\n";
+        // cout << "| Account created successfully!, You can now log in to your account.\n";
+        Animation::Text::writing("| Account created successfully!, You can now log in to your account.\n");
         return;
 
     }
     else{
-        cout << "| Passwords do not match. Please make sure your passwords match and try again.\n";
+        // cout << "| Passwords do not match. Please make sure your passwords match and try again.\n";
+        Animation::Text::writing("| Passwords do not match. Please make sure your passwords match and try again.\n");
         signUp();
         return;
     }
@@ -48,18 +54,23 @@ void signIn(){
     file.close();
 
 
-    cout << "Enter your username: ";
+    // cout << "Enter your username: ";
+    Animation::Text::writing("Enter your username: ");
     cin >> username;
+
     if (username != username_check){
-        cout << "| The username you entered is not valid or does not exist.\n";
+        // cout << "| The username you entered is not valid or does not exist.\n";
+        Animation::Text::writing("| The username you entered is not valid or does not exist.\n");
         signIn();
         return;
     }
 
-    cout << "Enter your password: ";
+    // cout << "Enter your password: ";
+    Animation::Text::writing("Enter your password: ");
     password = getPass();
     if (password != password_check){
-        cout << "| Wrong password!.\n";
+        // cout << "| Wrong password!.\n";
+        Animation::Text::writing("| Wrong password!.\n");
         signIn();
         return;
     }

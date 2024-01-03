@@ -9,7 +9,7 @@ using namespace std;
 
 namespace Animation{
     namespace Text{
-        void writing(const string& text, const int& speed = 45, const string& endLine = "\n");
+        void writing(const string& text, const int& deley = 1000, const string& endLine = "");
     }
 }
 #endif
