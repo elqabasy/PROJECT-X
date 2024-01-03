@@ -1,19 +1,14 @@
-//
-// Created by Mahros on 12/31/2023.
-//
-
 #include <conio.h>
 #include <iostream>
+#include "../lib/getpass.h"
 using namespace std;
 
-#include "../lib/getpass.h"
 
 // Function that accepts the password
-string GetPass(const string& label, char securityChar) {
+string getPass(){
     // input
     string password;
     char inputChar;
-    cout << label;
 
     // process
     while (true) {
@@ -38,6 +33,6 @@ string GetPass(const string& label, char securityChar) {
         }
 
         password.push_back(inputChar);
-        cout << securityChar;
+        cout << '*';
     }
 }
