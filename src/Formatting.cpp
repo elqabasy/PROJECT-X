@@ -4,39 +4,20 @@
 
 #include <windows.h>
 #include <algorithm>
+#include "../lib/Console.h"
 #include "../lib/Formatting.h"
 
-/* Console */
-// For console functions: should be seprated in file named: Console.cpp, Console.h
-void Console::getConsoleSize(int& rows, int& cols) {
-    CONSOLE_SCREEN_BUFFER_INFO CSBI;
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CSBI);
-    rows = CSBI.srWindow.Bottom - CSBI.srWindow.Top + 1;
-    cols = CSBI.srWindow.Right - CSBI.srWindow.Left + 1;
-}
-
-void Console::setCursor(const int& rowPos, const int& colPos) {
-    cout << "\x1b[" << rowPos << ";" << colPos << "H";
-}
-
-void Console::resetCursor(){
-    cout << "\x1b[" << 0 << ";" << 0 << "H";
-}
-
-void Console::sleep(const int& seconds) {
-    this_thread::sleep_for(chrono::seconds{seconds}); // got it from internet search
-    // chrono::seconds{seconds} return a const value of seconds with type chrono::seconds
-}   
-
 /* Text */
-void Text::printCenter(const string& text, const char& endChar) {
+
+
+void Formatting::Text::printCenter(const string& text, const char& endChar) {
     // This function is slow and deprecated.
     int rows, cols; Console::getConsoleSize(rows, cols); // save rows and cols to variables: rows, cols
     cols = (cols / 2) - text.size() / 2;
     cout << string(cols, ' ') << text << endChar; // but the time complixty for this function is O(cols);
 }
 
-void Text::print(const string& text, const short int& align, const string& endLine){
+void Formatting::Text::print(const string& text, const short int& align, const string& endLine){
     // New version of the printCenter()
     int rows, cols; Console::getConsoleSize(rows, cols); // save rows and cols to variables: rows, cols
 
@@ -64,7 +45,7 @@ void Text::print(const string& text, const short int& align, const string& endLi
     */
 }
 
-void Text::print(const string &text, const short int &xAlign, const short int &yAlign, const string &endLine){
+void Formatting::Text::print(const string &text, const short int &xAlign, const short int &yAlign, const string &endLine){
     int rows, cols; Console::getConsoleSize(rows, cols); // save rows and cols to variables: rows, cols
     const int length = text.size();
     int colPos = 0, rowPos = 0;
@@ -106,7 +87,7 @@ void Text::print(const string &text, const short int &xAlign, const short int &y
     */
 }
 
-void Text::printLong(const string &text, const short int &xAlign, const short int &yAlign, const string &endLine){
+void Formatting::Text::printLong(const string &text, const short int &xAlign, const short int &yAlign, const string &endLine){
     int rows, cols; Console::getConsoleSize(rows, cols); // save rows and cols to variables: rows, cols
     const int length = text.size();
     int colPos = 0, rowPos = 0;
