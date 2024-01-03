@@ -3,6 +3,7 @@
 //
 
 #include <windows.h>
+#include <algorithm>
 #include "../lib/Formatting.h"
 
 /* Console */
@@ -105,6 +106,50 @@ void Text::print(const string &text, const short int &xAlign, const short int &y
     */
 }
 
+void Text::printLong(const string &text, const short int &xAlign, const short int &yAlign, const string &endLine){
+    int rows, cols; Console::getConsoleSize(rows, cols); // save rows and cols to variables: rows, cols
+    const int length = text.size();
+    int colPos = 0, rowPos = 0;
+    const int linesCount = count(text.begin(), text.end(), '\n') + 1;
+    // string textTokens[]
+
+    // align top-left
+    switch (xAlign){
+        case -1: // left
+            colPos = 0;
+            break;
+        case 0: // center
+            colPos = (cols / 2) - (length / 2);
+            break;
+        case 1: // right
+            colPos = cols - length;
+            break;
+        default:
+            break;
+    }
+    
+    switch (yAlign){
+        case -1: // left
+            rowPos = 0;
+            break;
+        case 0: // center
+            rowPos = (rows / 2) - 1; // because we write horizontal not vertical: we will do this later.
+            break;
+        case 1: // right
+            rowPos = rows - 1;
+            break;
+        default:
+            break;
+    }
+
+    Console::setCursor(rowPos, colPos); cout << text << endLine;
+    /* And Second:
+    * I got this from internet saerch: cout << "\033[" << 10 << ";0H";
+        * So this syntax will start writing the text from the row 10.
+        * We will separate it as this: cout << cout << "\033[" << 10 << ";0H".
+    */
+}
+
 /* Features:
-* Print text in center of screen
-*/    
+    * Print text in center of screen
+*/

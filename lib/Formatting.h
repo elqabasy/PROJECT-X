@@ -22,6 +22,7 @@ namespace Text{
     void printCenter(const string& text, const char& endChar = '\n');
     void print(const string& text, const short int& position, const string& endLine = "\n");
     void print(const string& text, const short int& xAlign, const short int& yAlign, const string& endLine = "\n");
+    void printLong(const string& text, const short int& xAlign, const short int& yAlign, const string& endLine = "\n");
 }
 #endif
 
