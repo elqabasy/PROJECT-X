@@ -11,6 +11,7 @@ add_executable(PROJECT-X
     src/getpass.cpp
     src/loginSys.cpp
     # ... add more source files as needed
+    src/File.cpp
 )
 
 # Include directories
