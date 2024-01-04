@@ -2,8 +2,8 @@
 // Created by Mahros on 12/31/2023.
 //
 
-#ifndef GETPASS_H
-#define GETPASS_H
+#ifndef PROJECT_X_GETPASS_H
+#define PROJECT_X_GETPASS_H
 #include <iostream>
 using namespace std;
 

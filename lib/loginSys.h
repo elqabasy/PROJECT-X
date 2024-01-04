@@ -1,10 +1,10 @@
-#ifndef GETPASS_H
-#define GETPASS_H
+#ifndef PROJECT_X_LOGINSYS_H
+#define PROJECT_X_LOGINSYS_H
 
 #include <iostream>
 using namespace std;
 
-void signUp();
-void signIn();
+bool signUp();
+bool signIn();
 
 #endif

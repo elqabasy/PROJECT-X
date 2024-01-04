@@ -2,7 +2,7 @@
 // Created by Mahros at 2022/11/25.
 //
 #include <fstream>
-#include "../lib/File.h"
+#include "../lib/file.h"
 using namespace std;
 
 bool File::exist(const string& fileName){
