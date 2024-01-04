@@ -1,9 +1,5 @@
-//
-// Created by Mahros on 12/31/2023.
-//
-
-#ifndef DRAWINGS_H
-#define DRAWINGS_H
+#ifndef PROJECT_X_DRAWINGS_H
+#define PROJECT_X_DRAWINGS_H
 
 void homeScreen();
 void loginScreen();
