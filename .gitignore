@@ -31,6 +31,12 @@
 *.out
 *.app
 
-# Our
+# dirs
 build/
 .vscode/
+examples/
+resources/
+
+# files
+test.not
+mahros.tasks

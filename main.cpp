@@ -1,9 +1,10 @@
-#include <iostream>
 #include <fstream>
-#include "lib/drawings.h"
+#include <iostream>
 #include "lib/getpass.h"
-#include "lib/File.h"
+#include "lib/drawings.h"
 using namespace std;
+#include "lib/Animation.h"
+
 
 // Tasks
 // 1- Handle Keys
@@ -13,7 +14,7 @@ using namespace std;
 //Functions
 void signIn();
 void signUp();
-void selectOption(unsigned short int &input);
+void selectOption(unsigned short int &input);    
 
 int main(){
     homeScreen();
@@ -22,7 +23,6 @@ int main(){
     selectOption(input);
     return 0;
 }
-
 
 void selectOption(unsigned short int &input){
     switch(input){
@@ -35,11 +35,13 @@ void selectOption(unsigned short int &input){
             signUp();
             break;
         case 0:
-            cout << "| See you soon!\n";
+            // cout << "| See you soon!\n";
+            Animation::Text::writing("| See you soon!\n");
             return;
             break;
         default:
-            cout << "| Invalid Input, Please Try Again!\n";
+            // cout << "| Invalid Input, Please Try Again!\n";
+            Animation::Text::writing("| Invalid Input, Please Try Again!\n");
             selectOption(input);
             break;
     }
